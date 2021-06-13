@@ -1,6 +1,6 @@
 import { Inject, Injectable, NgZone } from '@angular/core';
 import { asyncScheduler, defer, merge, Observable, queueScheduler, Subject, timer } from 'rxjs';
-import { observeOn, shareReplay, switchMapTo } from 'rxjs/operators';
+import { observeOn, shareReplay, switchMapTo, takeUntil } from 'rxjs/operators';
 
 import { PollingConfigToken } from '../constants';
 import { PollingConfig } from '../models/polling-config.model';
@@ -27,6 +27,13 @@ export class PollingFactoryService {
       )
     );
 
+    /** merged status observable */
+    const status$ = merge(immediate$, polling$).pipe(
+      observeOn(this.enterZone),
+      shareReplay({ bufferSize: 1, refCount: true })
+    );
+
+    /** trigger an immediate update and return result */
     const update = () => {
       const res = action().pipe(shareReplay({ bufferSize: 1, refCount: true }));
       res.subscribe(res => immediate$.next(res));
@@ -35,11 +42,12 @@ export class PollingFactoryService {
     };
 
     return {
-      status$: merge(immediate$, polling$).pipe(
-        observeOn(this.enterZone),
-        shareReplay({ bufferSize: 1, refCount: true })
-      ),
+      status$,
       update,
+      takeUntil: destroy$ => ({
+        status$: status$.pipe(takeUntil(destroy$)),
+        update,
+      }),
     };
   }
 }

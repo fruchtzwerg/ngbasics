@@ -13,7 +13,7 @@ import { PollingExampleComponent } from './polling-example.component';
     CommonModule,
     PollingExampleRoutingModule,
     HttpClientModule,
-    PollingModule.forChild({ initialDelay: 500, pollingRate: 5000 }),
+    PollingModule.forChild({ initialDelay: 500, pollingRate: 5_000 }),
   ],
 })
 export class PollingExampleModule {}

@@ -2,6 +2,8 @@
 
 Useful Angular utilities.
 
+- [Polling](./libs/polling/README.md)
+
 ## Generate a library
 
 Run `ng g @nrwl/angular:lib my-lib` to generate a library.

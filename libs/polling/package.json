@@ -2,7 +2,7 @@
   "name": "@ngutils/polling",
   "version": "12.0.4",
   "peerDependencies": {
-    "@angular/core": "^12.0.4",
+    "@angular/core": "^12.0.0",
     "rxjs": "~6.6.0"
   },
   "dependencies": {

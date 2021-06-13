@@ -12,6 +12,6 @@ export class PollingApiService {
   constructor(private http: HttpClient) {}
 
   getData() {
-    return this.http.get(this.url);
+    return this.http.get<number>(this.url);
   }
 }
