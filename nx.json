@@ -22,15 +22,14 @@
     "example-app": {
       "tags": []
     },
-    "example-app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["example-app"]
-    },
     "api": {
       "tags": []
     },
     "api-interfaces": {
       "tags": []
+    },
+    "polling": {
+      "tags": ["polling"]
     }
   }
 }

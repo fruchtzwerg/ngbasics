@@ -48,10 +48,7 @@
             "polyfills": "apps/example-app/src/polyfills.ts",
             "tsConfig": "apps/example-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/example-app/src/favicon.ico",
-              "apps/example-app/src/assets"
-            ],
+            "assets": ["apps/example-app/src/favicon.ico", "apps/example-app/src/assets"],
             "styles": ["apps/example-app/src/styles.scss"],
             "scripts": []
           },
@@ -112,10 +109,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/example-app/src/**/*.ts",
-              "apps/example-app/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/example-app/src/**/*.ts", "apps/example-app/src/**/*.html"]
           }
         },
         "test": {
@@ -124,32 +118,6 @@
           "options": {
             "jestConfig": "apps/example-app/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "example-app-e2e": {
-      "root": "apps/example-app-e2e",
-      "sourceRoot": "apps/example-app-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/example-app-e2e/cypress.json",
-            "tsConfig": "apps/example-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "example-app:serve:development"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "example-app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/example-app-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -213,6 +181,44 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+          }
+        }
+      }
+    },
+    "polling": {
+      "projectType": "library",
+      "root": "libs/polling",
+      "sourceRoot": "libs/polling/src",
+      "prefix": "ngutils",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/polling"],
+          "options": {
+            "project": "libs/polling/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/polling/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/polling/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/polling"],
+          "options": {
+            "jestConfig": "libs/polling/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/polling/src/**/*.ts", "libs/polling/src/**/*.html"]
           }
         }
       }

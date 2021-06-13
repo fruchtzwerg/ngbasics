@@ -1,0 +1,8 @@
+<p>
+  <button (click)="logging.update()">Log</button>
+</p>
+
+<div>
+  <button (click)="polling.update()">Update now</button>
+  <div>{{ polling.status$ | async }}</div>
+</div>

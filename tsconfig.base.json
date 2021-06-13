@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ngutils/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@ngutils/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@ngutils/polling": ["libs/polling/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
