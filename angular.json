@@ -85,7 +85,19 @@
             "tsConfig": "apps/example-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/example-app/src/favicon.ico", "apps/example-app/src/assets"],
-            "styles": ["apps/example-app/src/styles.scss"],
+            "styles": [
+              "apps/example-app/src/styles.scss",
+              {
+                "bundleName": "dark",
+                "input": "apps/example-app/src/themes/dark.scss",
+                "inject": false
+              },
+              {
+                "bundleName": "light",
+                "input": "apps/example-app/src/themes/light.scss",
+                "inject": false
+              }
+            ],
             "scripts": []
           },
           "configurations": {
@@ -199,6 +211,48 @@
         }
       },
       "tags": ["polling"]
+    },
+    "theme-selector": {
+      "projectType": "library",
+      "root": "libs/theme-selector",
+      "sourceRoot": "libs/theme-selector/src",
+      "prefix": "ngutils",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/theme-selector"],
+          "options": {
+            "project": "libs/theme-selector/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/theme-selector/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/theme-selector/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/theme-selector"],
+          "options": {
+            "jestConfig": "libs/theme-selector/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/theme-selector/src/**/*.ts",
+              "libs/theme-selector/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }

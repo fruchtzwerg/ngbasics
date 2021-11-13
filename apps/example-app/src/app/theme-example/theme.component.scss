@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.themed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  border: 1px solid #646464;
+
+  height: 8rem;
+  width: 8rem;
+}
+
+button {
+  display: block;
+  margin: auto;
+  border: 1px solid #646464;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 1rem;
+}

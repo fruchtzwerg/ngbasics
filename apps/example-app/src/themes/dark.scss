@@ -1,0 +1,18 @@
+body {
+  background-color: #343434;
+  color: white;
+  transition: background-color 500ms, color 500ms;
+}
+
+.themed {
+  border-radius: 50%;
+  background-color: #141414;
+}
+
+button {
+  color: white;
+}
+
+a {
+  color: inherit;
+}
