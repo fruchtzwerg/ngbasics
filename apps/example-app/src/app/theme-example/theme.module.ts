@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ThemeSelectorModule } from '@ngutils/theme-selector';
+import { ThemeSelectorModule } from '@ngbasics/theme-selector';
 
 import { ThemeRoutingModule } from './theme-routing.module';
 import { ThemeComponent } from './theme.component';

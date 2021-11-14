@@ -72,7 +72,7 @@
       "projectType": "application",
       "root": "apps/example-app",
       "sourceRoot": "apps/example-app/src",
-      "prefix": "ngutils",
+      "prefix": "ngbasics",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -176,7 +176,7 @@
       "projectType": "library",
       "root": "libs/polling",
       "sourceRoot": "libs/polling/src",
-      "prefix": "ngutils",
+      "prefix": "ngbasics",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -216,7 +216,7 @@
       "projectType": "library",
       "root": "libs/theme-selector",
       "sourceRoot": "libs/theme-selector/src",
-      "prefix": "ngutils",
+      "prefix": "ngbasics",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",

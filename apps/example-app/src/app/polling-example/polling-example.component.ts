@@ -2,14 +2,14 @@ import { Component, OnDestroy } from '@angular/core';
 import { of, Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
 
-import { PollingConfig, PollingConfigToken, PollingFactoryService } from '@ngutils/polling';
+import { PollingConfig, PollingConfigToken, PollingFactoryService } from '@ngbasics/polling';
 
 import { PollingApiService } from './services/polling-api.service';
 
 const pollingConfig: Partial<PollingConfig> = { pollingRate: 2_000 };
 
 @Component({
-  selector: 'ngutils-polling-example',
+  selector: 'ngbasics-polling-example',
   templateUrl: './polling-example.component.html',
   styleUrls: ['./polling-example.component.scss'],
   // override config for this component

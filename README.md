@@ -1,4 +1,4 @@
-# Ngutils
+# ngbasics
 
 Useful Angular utilities.
 

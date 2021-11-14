@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { ThemeSelectorService } from '@ngutils/theme-selector';
+import { ThemeSelectorService } from '@ngbasics/theme-selector';
 
 import { Theme } from './theme.model';
 
 const getOtherTheme = (theme: Theme) => (theme === 'light' ? 'dark' : 'light');
 
 @Component({
-  selector: 'ngutils-theme',
+  selector: 'ngbasics-theme',
   templateUrl: './theme.component.html',
   styleUrls: ['./theme.component.scss'],
 })

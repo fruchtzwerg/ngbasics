@@ -1,4 +1,4 @@
-# @ngutils/theme-selector
+# @ngbasics/theme-selector
 
 Switch global styles at runtime.
 

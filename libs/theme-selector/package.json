@@ -1,10 +1,18 @@
 {
-  "name": "@ngutils/theme-selector",
+  "name": "@ngbasics/theme-selector",
   "description": "Switch global styles at runtime",
   "author": {
     "name": "Benjamin Montazer"
   },
-  "version": "12.2.0",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "theme",
+    "css",
+    "global",
+    "style"
+  ],
+  "version": "12.2.3",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
     "@angular/core": "^12.2.0"

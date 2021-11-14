@@ -9,7 +9,7 @@
   "affected": {
     "defaultBase": "master"
   },
-  "npmScope": "ngutils",
+  "npmScope": "ngbasics",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
