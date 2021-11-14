@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, skip } from 'rxjs/operators';
 
-import { ThemeSelectorService } from '@ngbasics/theme-selector';
+import { ThemeSelectorService, THEME_KEY } from '@ngbasics/theme-selector';
 
 import { Theme } from './theme.model';
 
@@ -16,7 +16,9 @@ export class ThemeComponent {
   public otherTheme$ = this.themeService.theme$.pipe(map(getOtherTheme));
 
   constructor(public themeService: ThemeSelectorService<Theme>) {
-    themeService.osIsDark$.subscribe(dark => themeService.selectTheme(dark ? 'dark' : 'light'));
+    themeService.osIsDark$
+      .pipe(skip(localStorage.getItem(THEME_KEY) ? 1 : 0))
+      .subscribe(dark => themeService.selectTheme(dark ? 'dark' : 'light'));
   }
 
   public toggleTheme() {

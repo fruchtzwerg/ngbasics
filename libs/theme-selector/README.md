@@ -120,7 +120,10 @@ You can select a theme based on whether the user's operating system is light or 
 })
 export class ThemeComponent {
   constructor(themeService: ThemeSelectorService<Theme>) {
-    themeService.osIsDark$.subscribe(dark => themeService.selectTheme(dark ? 'dark' : 'light'));
+    themeService.osIsDark$
+      // respect user selected theme on reload
+      .pipe(skip(localStorage.getItem(THEME_KEY) ? 1 : 0))
+      .subscribe(dark => themeService.selectTheme(dark ? 'dark' : 'light'));
   }
 }
 ```
