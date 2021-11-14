@@ -2,7 +2,7 @@
 
 Switch global styles at runtime.
 
-![demo](./demo.gif)
+![demo](https://github.com/fruchtzwerg/ngbasics/raw/master/libs/theme-selector/demo.gif)
 
 ---
 
@@ -107,3 +107,20 @@ const themeConfig: ThemeSelectorConfig = {
 ```
 
 The storage must implement the `Storage` interface.
+
+## OS light/dark listener
+
+You can select a theme based on whether the user's operating system is light or dark by listening to `osIsDark$`:
+
+```ts
+@Component({
+  selector: 'app-theme',
+  templateUrl: './theme.component.html',
+  styleUrls: ['./theme.component.scss'],
+})
+export class ThemeComponent {
+  constructor(themeService: ThemeSelectorService<Theme>) {
+    themeService.osIsDark$.subscribe(dark => themeService.selectTheme(dark ? 'dark' : 'light'));
+  }
+}
+```

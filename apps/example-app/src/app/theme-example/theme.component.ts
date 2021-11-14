@@ -15,7 +15,9 @@ const getOtherTheme = (theme: Theme) => (theme === 'light' ? 'dark' : 'light');
 export class ThemeComponent {
   public otherTheme$ = this.themeService.theme$.pipe(map(getOtherTheme));
 
-  constructor(public themeService: ThemeSelectorService<Theme>) {}
+  constructor(public themeService: ThemeSelectorService<Theme>) {
+    themeService.osIsDark$.subscribe(dark => themeService.selectTheme(dark ? 'dark' : 'light'));
+  }
 
   public toggleTheme() {
     const other = getOtherTheme(this.themeService.currentTheme);
