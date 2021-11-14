@@ -97,7 +97,7 @@ export class MyComponent {
 
 ## Configuration
 
-The module allowes configuration of the polling interval as well as the delay until the first execution.
+The module allows configuration of the polling interval as well as the delay until the first execution.
 
 ### Module scope
 
@@ -175,11 +175,11 @@ export class MyService {
 
   constructor(private pollingFactory: PollingFactoryService, private http: HttpClient) {}
 
-  public createItem(item: Item): Promise<Item> {
+  public createItem(item: Item): Observable<Item> {
     return concat(
       defer(() => this.http.post<void>(url, item)),
       defer(() => this.polling.update())
-    ).toPromise();
+    );
   }
 }
 ```
