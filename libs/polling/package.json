@@ -4,6 +4,7 @@
   "author": {
     "name": "Benjamin Montazer"
   },
+  "repository": "github:fruchtzwerg/ngbasics",
   "license": "MIT",
   "keywords": [
     "angular",
