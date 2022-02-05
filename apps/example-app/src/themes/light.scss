@@ -1,11 +1,21 @@
+:root {
+  --color: white;
+  --background: #eaeaea;
+  --text: black;
+}
+
 body {
+  background-color: var(--color);
+  color: var(--text);
   transition: background-color 200ms, color 200ms;
 }
 
 .themed {
-  background-color: #eaeaea;
+  transition: border-radius 1s;
+  background-color: var(--background);
 }
 
-a {
-  color: inherit;
+a,
+button {
+  color: var(--text);
 }

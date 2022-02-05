@@ -1,18 +1,22 @@
+:root {
+  --color: #343434;
+  --background: #141414;
+  --text: white;
+}
+
 body {
-  background-color: #343434;
-  color: white;
+  background-color: var(--color);
+  color: var(--text);
   transition: background-color 500ms, color 500ms;
 }
 
 .themed {
   border-radius: 50%;
-  background-color: #141414;
+  background-color: var(--background);
+  transition: border-radius 3s;
 }
 
+a,
 button {
-  color: white;
-}
-
-a {
-  color: inherit;
+  color: var(--text);
 }
