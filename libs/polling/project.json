@@ -1,0 +1,40 @@
+{
+  "projectType": "library",
+  "root": "libs/polling",
+  "sourceRoot": "libs/polling/src",
+  "prefix": "ngbasics",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/polling"],
+      "options": {
+        "project": "libs/polling/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/polling/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/polling/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/polling"],
+      "options": {
+        "jestConfig": "libs/polling/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/polling/src/**/*.ts", "libs/polling/src/**/*.html"]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": ["polling"]
+}

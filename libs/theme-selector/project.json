@@ -1,0 +1,39 @@
+{
+  "projectType": "library",
+  "root": "libs/theme-selector",
+  "sourceRoot": "libs/theme-selector/src",
+  "prefix": "ngbasics",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/theme-selector"],
+      "options": {
+        "project": "libs/theme-selector/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/theme-selector/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/theme-selector/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/theme-selector"],
+      "options": {
+        "jestConfig": "libs/theme-selector/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/theme-selector/src/**/*.ts", "libs/theme-selector/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
