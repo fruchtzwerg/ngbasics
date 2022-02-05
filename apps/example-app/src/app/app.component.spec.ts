@@ -1,4 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ describe('AppComponent', () => {
       TestBed.configureTestingModule({
         declarations: [AppComponent],
         imports: [HttpClientModule],
+        schemas: [NO_ERRORS_SCHEMA],
       }).compileComponents();
     })
   );
