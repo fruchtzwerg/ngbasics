@@ -34,6 +34,14 @@
         "lintFilePatterns": ["libs/polling/src/**/*.ts", "libs/polling/src/**/*.html"]
       },
       "outputs": ["{options.outputFile}"]
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "yarn publish --tag=latest --access public",
+        "cwd": "dist/libs/polling"
+      }
     }
   },
   "tags": ["polling"]

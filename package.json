@@ -9,6 +9,8 @@
     "start": "nx run-many --target=serve --projects=example-app,api --parallel=2",
     "start:app": "nx serve example-app",
     "start:api": "nx serve api",
+    "publish:polling": "nx build polling --prod && nx publish polling",
+    "publish:theme": "nx build theme-selector --prod && nx publish theme-selector",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
