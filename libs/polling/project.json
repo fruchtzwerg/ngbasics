@@ -8,7 +8,9 @@
       "executor": "@nrwl/angular:package",
       "outputs": ["dist/libs/polling"],
       "options": {
-        "project": "libs/polling/ng-package.json"
+        "project": "libs/polling/ng-package.json",
+        "buildableProjectDepsInPackageJsonType": "peerDependencies",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "configurations": {
         "production": {

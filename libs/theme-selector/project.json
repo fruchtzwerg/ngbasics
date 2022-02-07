@@ -8,7 +8,9 @@
       "executor": "@nrwl/angular:package",
       "outputs": ["dist/libs/theme-selector"],
       "options": {
-        "project": "libs/theme-selector/ng-package.json"
+        "project": "libs/theme-selector/ng-package.json",
+        "buildableProjectDepsInPackageJsonType": "peerDependencies",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "configurations": {
         "production": {
