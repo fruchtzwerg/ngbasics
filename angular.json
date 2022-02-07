@@ -13,7 +13,15 @@
           "executor": "@jscutlery/semver:version",
           "options": {
             "syncVersions": true,
-            "commitMessageFormat": "chore(${projectName}): release version ${version}"
+            "commitMessageFormat": "chore(${projectName}): release version ${version}",
+            "postTargets": ["polling:publish", "theme-selector:publish", "workspace:github"]
+          }
+        },
+        "github": {
+          "executor": "@jscutlery/semver:github",
+          "options": {
+            "tag": "${tag}",
+            "generateNotes": true
           }
         }
       }
