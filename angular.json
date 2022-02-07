@@ -5,6 +5,18 @@
     "api-interfaces": "libs/api-interfaces",
     "example-app": "apps/example-app",
     "polling": "libs/polling",
-    "theme-selector": "libs/theme-selector"
+    "theme-selector": "libs/theme-selector",
+    "workspace": {
+      "root": ".",
+      "targets": {
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": true,
+            "commitMessageFormat": "chore(${projectName}): release version ${version}"
+          }
+        }
+      }
+    }
   }
 }
