@@ -19,6 +19,9 @@ Add the plugin to your `.eslint.json` and extend the recommended config.
 ```json
 {
   "plugins": ["@ngbasics"],
-  "extends": ["plugin:@ngbasics/recommended"]
+  "extends": ["plugin:@ngbasics/recommended"],
+  "parserOptions": {
+    "project": "./tsconfig.*?.json"
+  }
 }
 ```
