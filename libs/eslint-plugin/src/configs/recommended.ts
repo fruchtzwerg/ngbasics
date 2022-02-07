@@ -22,6 +22,9 @@ export const recommended = {
       files: ['*.ts', '*.tsx'],
       plugins: ['rxjs', 'import'],
       extends: ['plugin:rxjs/recommended'],
+      parserOptions: {
+        project: './tsconfig.*?.json',
+      },
       rules: {
         'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
         'import/order': [
