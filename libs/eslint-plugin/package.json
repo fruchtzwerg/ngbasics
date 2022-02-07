@@ -1,6 +1,6 @@
 {
   "name": "@ngbasics/eslint-plugin",
-  "version": "13.0.3",
+  "version": "13.0.4",
   "description": "Switch global styles at runtime",
   "author": {
     "name": "Benjamin Montazer"
