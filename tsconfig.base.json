@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@ngbasics/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@ngbasics/eslint-plugin": ["libs/eslint-plugin/src/index.ts"],
       "@ngbasics/polling": ["libs/polling/src/index.ts"],
       "@ngbasics/theme-selector": ["libs/theme-selector/src/index.ts"]
     }

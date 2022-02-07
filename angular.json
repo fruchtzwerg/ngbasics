@@ -3,18 +3,19 @@
   "projects": {
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
+    "eslint-plugin": "libs/eslint-plugin",
     "example-app": "apps/example-app",
     "polling": "libs/polling",
     "theme-selector": "libs/theme-selector",
     "workspace": {
-      "root": ".",
+      "root": "tools",
       "targets": {
         "version": {
           "executor": "@jscutlery/semver:version",
           "options": {
             "syncVersions": true,
             "commitMessageFormat": "chore(${projectName}): release version ${version}",
-            "postTargets": ["polling:publish", "theme-selector:publish", "workspace:github"]
+            "postTargets": ["workspace:github"]
           }
         },
         "github": {

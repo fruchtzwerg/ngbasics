@@ -45,5 +45,5 @@
       }
     }
   },
-  "tags": ["polling"]
+  "tags": ["polling", "scope:lib"]
 }

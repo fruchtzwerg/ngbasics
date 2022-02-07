@@ -32,29 +32,46 @@
   },
   "defaultProject": "example-app",
   "generators": {
+    "@schematics/angular": {
+      "component": {
+        "style": "scss",
+        "changeDetection": "OnPush",
+        "displayBlock": true,
+        "skipTests": true
+      }
+    },
     "@nrwl/angular": {
       "application": {
-        "linter": "eslint"
+        "style": "scss",
+        "linter": "eslint",
+        "unitTestRunner": "jest",
+        "e2eTestRunner": "cypress",
+        "standaloneConfig": true,
+        "setParserOptionsProject": true,
+        "tags": "scope:app"
       },
       "library": {
-        "linter": "eslint"
+        "linter": "eslint",
+        "unitTestRunner": "jest",
+        "standaloneConfig": true,
+        "setParserOptionsProject": true,
+        "tags": "scope:lib"
       },
       "storybook-configuration": {
         "linter": "eslint"
+      },
+      "component": {
+        "style": "scss",
+        "changeDetection": "OnPush",
+        "displayBlock": true,
+        "skipTests": true
       }
     },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
+    "@nrwl/workspace": {
+      "library": {
+        "standaloneConfig": true,
+        "setParserOptionsProject": true
+      }
     }
   }
 }

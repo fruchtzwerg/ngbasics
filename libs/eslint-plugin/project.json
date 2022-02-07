@@ -1,0 +1,40 @@
+{
+  "root": "libs/eslint-plugin",
+  "sourceRoot": "libs/eslint-plugin/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/eslint-plugin",
+        "main": "libs/eslint-plugin/src/index.ts",
+        "tsConfig": "libs/eslint-plugin/tsconfig.lib.json",
+        "assets": ["libs/eslint-plugin/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/eslint-plugin/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/eslint-plugin"],
+      "options": {
+        "jestConfig": "libs/eslint-plugin/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "buildTarget": "production"
+      }
+    }
+  },
+  "tags": ["eslint"]
+}

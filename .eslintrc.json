@@ -1,7 +1,8 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx", "import", "rxjs"],
+  "plugins": ["@nrwl/nx", "@ngbasics"],
+  "extends": ["plugin:@ngbasics/recommended"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -13,35 +14,14 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
-        ],
-        "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
-        "import/order": [
-          "warn",
-          {
-            "newlines-between": "always",
-            "alphabetize": {
-              "order": "asc",
-              "caseInsensitive": true
-            },
-            "groups": [["builtin", "external"], "internal", "parent", "sibling", "index", "object"],
-            "pathGroups": [
-              {
-                "pattern": "@/**",
-                "group": "internal",
-                "position": "before"
+                "sourceTag": "scope:app",
+                "onlyDependOnLibsWithTags": ["scope:lib"]
               },
               {
-                "pattern": "@ngbasics/**",
-                "group": "internal",
-                "position": "before"
+                "sourceTag": "scope:lib",
+                "onlyDependOnLibsWithTags": ["scope:lib"]
               }
-            ],
-            "pathGroupsExcludedImportTypes": []
+            ]
           }
         ]
       }
@@ -51,7 +31,7 @@
       "parserOptions": {
         "project": "./tsconfig.*?.json"
       },
-      "extends": ["plugin:@nrwl/nx/typescript", "plugin:rxjs/recommended"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
       "rules": {}
     },
     {

@@ -1822,6 +1822,14 @@
     optional "0.1.4"
     tslib "2.3.1"
 
+"@ngbasics/eslint-plugin@^13.0.2":
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/@ngbasics/eslint-plugin/-/eslint-plugin-13.0.2.tgz#e5c00e5b71991ec70fe3900dc191794389aca9d9"
+  integrity sha512-6xMrIB7pTn0Nk4Rxx0aaGFpxfAIf8XXg7oRdy16HlQcjQiv6cdrprcwrQc/YzLXN6NsXh8ehAX30nPq8vuEdDg==
+  dependencies:
+    eslint-plugin-import "^2.25.4"
+    eslint-plugin-rxjs "^5.0.2"
+
 "@ngtools/webpack@13.2.2":
   version "13.2.2"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-13.2.2.tgz#b0e3b6441432dc899c42e0ada1a95c72898bc3bc"
@@ -2006,6 +2014,27 @@
     resolve.exports "1.1.0"
     rxjs "^6.5.4"
     tslib "^2.3.0"
+
+"@nrwl/js@13.7.3":
+  version "13.7.3"
+  resolved "https://registry.yarnpkg.com/@nrwl/js/-/js-13.7.3.tgz#8a1d2f73b909e3d6cb0d6e9e226950a75da60c23"
+  integrity sha512-tIj1WxawE6f5dtRNTr7Cq3I0mBt0KkdqriX5xUxWp+KtJhUwaT9izCHTqb1qfz0gIOh1pFCwGW3KqL+LsuvW8w==
+  dependencies:
+    "@nrwl/devkit" "13.7.3"
+    "@nrwl/jest" "13.7.3"
+    "@nrwl/linter" "13.7.3"
+    "@nrwl/workspace" "13.7.3"
+    "@parcel/watcher" "2.0.4"
+    chalk "4.1.0"
+    fast-glob "^3.2.7"
+    fs-extra "^9.1.0"
+    ignore "^5.0.4"
+    js-tokens "^4.0.0"
+    minimatch "3.0.4"
+    rxjs "^6.5.4"
+    rxjs-for-await "0.0.2"
+    source-map-support "0.5.19"
+    tree-kill "1.2.2"
 
 "@nrwl/linter@13.7.3":
   version "13.7.3"
@@ -5202,7 +5231,7 @@ eslint-module-utils@^2.7.2:
     debug "^3.2.7"
     find-up "^2.1.0"
 
-eslint-plugin-import@^2.23.4:
+eslint-plugin-import@^2.23.4, eslint-plugin-import@^2.25.4:
   version "2.25.4"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.25.4.tgz#322f3f916a4e9e991ac7af32032c25ce313209f1"
   integrity sha512-/KJBASVFxpu0xg1kIBn9AUa8hQVnszpwgE7Ld0lKAlx7Ie87yzEzCgSkekt+le/YVhiaosO4Y14GDAOc41nfxA==
