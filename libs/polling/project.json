@@ -36,11 +36,10 @@
       "outputs": ["{options.outputFile}"]
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "outputs": [],
+      "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "command": "yarn publish --tag=latest --access public",
-        "cwd": "dist/libs/polling"
+        "access": "public",
+        "buildTarget": "production"
       }
     }
   },

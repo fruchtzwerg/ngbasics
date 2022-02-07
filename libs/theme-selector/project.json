@@ -35,13 +35,12 @@
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "outputs": [],
+      "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "command": "yarn publish --tag=latest --access public",
-        "cwd": "dist/libs/theme-selector"
+        "access": "public",
+        "buildTarget": "production"
       }
     }
   },
-  "tags": []
+  "tags": ["theme-selector"]
 }
