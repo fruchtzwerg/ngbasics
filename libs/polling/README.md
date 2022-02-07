@@ -2,6 +2,12 @@
 
 The polling module provides a factory service, which allows you to create polling tasks declaratively.
 
+## Installation
+
+```sh
+npm i @ngbasics/polling
+```
+
 ## Usage
 
 1. Import the module

@@ -6,6 +6,12 @@ Switch global styles at runtime.
 
 ---
 
+## Installation
+
+```sh
+npm i @ngbasics/theme-selector
+```
+
 ## Preparation
 
 Build your stylesheets:
