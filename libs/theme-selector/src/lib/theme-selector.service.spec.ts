@@ -1,7 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
+import { WINDOW } from './providers/window.provider';
 import { THEME_SELECTOR_CONFIG } from './theme-selector.config';
 import { ThemeSelectorService } from './theme-selector.service';
+
+const WINDOW_MOCK = { matchMedia: jest.fn(() => ({ onchange: jest.fn() })) };
 
 describe('ThemeSelectorService', () => {
   let service: ThemeSelectorService;
@@ -10,7 +13,8 @@ describe('ThemeSelectorService', () => {
     TestBed.configureTestingModule({
       providers: [
         ThemeSelectorService,
-        { provide: THEME_SELECTOR_CONFIG, useValue: { defaultTheme: 'foo' } },
+        { provide: THEME_SELECTOR_CONFIG, useValue: { initialTheme: 'foo' } },
+        { provide: WINDOW, useValue: WINDOW_MOCK },
       ],
     });
 

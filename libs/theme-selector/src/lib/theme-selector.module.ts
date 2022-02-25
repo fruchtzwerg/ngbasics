@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { ModuleWithProviders, NgModule, RendererFactory2 } from '@angular/core';
 
+import { WINDOW } from './providers/window.provider';
 import { defaultThemeSelectorConfig, THEME_SELECTOR_CONFIG } from './theme-selector.config';
 import { InitialConfig, SelectorConfig, ThemeSelectorConfig } from './theme-selector.config.model';
 import { ThemeSelectorService } from './theme-selector.service';
@@ -12,9 +13,16 @@ import { ThemeSelectorService } from './theme-selector.service';
 @NgModule()
 export class ThemeSelectorModule {
   /**
-   * Use the generic to provide a string union type of your themes' filenames.
+   * Inject a theme into index.html programmatically.
    *
-   * Don't forget to add your themees to angular.json:
+   * NOTE: Use the generic to provide a string union type of your themes' filenames.
+   *
+   * @example
+   * ```ts
+   * imports: [ThemeSelectorModule.forFeature({ initialTheme: 'dark' })]
+   * ```
+   *
+   * Don't forget to add your themes to angular.json:
    * ```json
    * "styles": [
         "src/styles.scss",
@@ -31,12 +39,27 @@ export class ThemeSelectorModule {
       ]
    * ```
    */
-  public static forRoot<Theme extends string = string>(
+  public static forFeature<Theme extends string = string>(
     config: InitialConfig<Theme>
   ): ModuleWithProviders<ThemeSelectorModule>;
 
   /**
-   * Use the generic to provide a string union type of your themes' filenames.
+   * Use a preloaded theme from index.html.
+   *
+   * NOTE: Use the generic to provide a string union type of your themes' filenames.
+   *
+   * @example
+   * ```html
+   * <!-- index.html -->
+   * <link rel="stylesheet" id="theme" href="dark.css" />
+   * ```
+   *
+   * ```ts
+   * // feature.module.ts
+   * imports: [ThemeSelectorModule.forFeature({
+   *  selector: document => document.querySelector<HTMLLinkElement>('#theme')
+   * })]
+   * ```
    *
    * Don't forget to add your themees to angular.json:
    * ```json
@@ -55,9 +78,9 @@ export class ThemeSelectorModule {
       ]
    * ```
    */
-  public static forRoot(config: SelectorConfig): ModuleWithProviders<ThemeSelectorModule>;
+  public static forFeature(config: SelectorConfig): ModuleWithProviders<ThemeSelectorModule>;
 
-  public static forRoot<Theme extends string = string>(
+  public static forFeature<Theme extends string = string>(
     config: ThemeSelectorConfig<Theme>
   ): ModuleWithProviders<ThemeSelectorModule> {
     return {
@@ -68,11 +91,10 @@ export class ThemeSelectorModule {
           useFactory: (
             document: Document,
             config: ThemeSelectorConfig<Theme>,
+            window: Window,
             rendererFactory: RendererFactory2
-          ) => {
-            return new ThemeSelectorService<Theme>(config, document, rendererFactory);
-          },
-          deps: [DOCUMENT, THEME_SELECTOR_CONFIG, RendererFactory2],
+          ) => new ThemeSelectorService<Theme>(config, document, window, rendererFactory),
+          deps: [DOCUMENT, THEME_SELECTOR_CONFIG, WINDOW, RendererFactory2],
         },
         { provide: THEME_SELECTOR_CONFIG, useValue: { ...defaultThemeSelectorConfig, ...config } },
       ],

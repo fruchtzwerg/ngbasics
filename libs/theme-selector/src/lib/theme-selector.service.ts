@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { createLink, selectLink } from './link.utils';
+import { WINDOW } from './providers/window.provider';
 import { THEME_SELECTOR_CONFIG } from './theme-selector.config';
 import { isSelectorConfig, ThemeSelectorConfig } from './theme-selector.config.model';
 
@@ -36,6 +37,7 @@ export class ThemeSelectorService<T extends string = string> {
   constructor(
     @Inject(THEME_SELECTOR_CONFIG) config: ThemeSelectorConfig<T>,
     @Inject(DOCUMENT) document: Document,
+    @Inject(WINDOW) window: Window,
     rendererFactory: RendererFactory2
   ) {
     const userTheme = config.storage?.getItem(THEME_KEY) as T | undefined;

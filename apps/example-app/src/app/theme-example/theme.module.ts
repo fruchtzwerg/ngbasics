@@ -11,7 +11,7 @@ import { ThemeComponent } from './theme.component';
   imports: [
     CommonModule,
     ThemeRoutingModule,
-    ThemeSelectorModule.forRoot({
+    ThemeSelectorModule.forFeature({
       // initialTheme: 'light',
       storage: localStorage,
       selector: (document: Document) => document.querySelector<HTMLLinkElement>('#theme'),
