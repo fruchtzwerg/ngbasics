@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [13.0.5](https://github.com/fruchtzwerg/ngbasics/compare/v13.0.4...v13.0.5) (2022-02-25)
+
+
+
+## [13.0.5](https://github.com/fruchtzwerg/ngbasics/compare/v13.0.4...v13.0.5) (2022-02-25)
+
+
+
 ## [13.0.4](https://github.com/fruchtzwerg/ngutils/compare/v13.0.3...v13.0.4) (2022-02-07)
 
 

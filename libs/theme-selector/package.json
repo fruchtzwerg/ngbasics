@@ -13,7 +13,7 @@
     "global",
     "style"
   ],
-  "version": "13.0.4",
+  "version": "13.0.5",
   "dependencies": {
     "tslib": "^2.3.0"
   }

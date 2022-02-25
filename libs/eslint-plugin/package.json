@@ -1,6 +1,6 @@
 {
   "name": "@ngbasics/eslint-plugin",
-  "version": "13.0.4",
+  "version": "13.0.5",
   "description": "RxJS + import order ESLint rules for angular projects",
   "author": {
     "name": "Benjamin Montazer"
