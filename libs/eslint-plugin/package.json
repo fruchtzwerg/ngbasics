@@ -1,7 +1,7 @@
 {
   "name": "@ngbasics/eslint-plugin",
   "version": "13.0.4",
-  "description": "Switch global styles at runtime",
+  "description": "RxJS + import order ESLint rules for angular projects",
   "author": {
     "name": "Benjamin Montazer"
   },

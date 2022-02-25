@@ -1,6 +1,6 @@
 {
   "name": "@ngbasics/polling",
-  "description": "Switch global styles at runtime",
+  "description": "Dispatch actions like HTTP requests in recurring intervals",
   "author": {
     "name": "Benjamin Montazer"
   },
