@@ -12,6 +12,7 @@
     "release": "nx version workspace --releaseAs=patch",
     "release:minor": "nx version workspace --releaseAs=minor",
     "release:major": "nx version workspace --releaseAs=major",
+    "publish": "nx run-many --target=publish --all --parallel=1",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
